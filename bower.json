@@ -1,0 +1,25 @@
+{
+  "name": "selectize-scss",
+  "version": "0.8.5rc1",
+  "authors": [
+    "Emanuel Kluge <mail@emanuel-kluge.de>"
+  ],
+  "description": "A port of the Selectize-styles to SCSS",
+  "main": [
+    "dist/selectize.css",
+    "dist/selectize.default.css"
+  ],
+  "keywords": [
+    "SCSS",
+    "CSS",
+    "Selectize"
+  ],
+  "license": "Apache License, Version 2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

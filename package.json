@@ -1,0 +1,16 @@
+{
+  "name": "selectize-scss",
+  "version": "0.8.5rc1",
+  "description": "A port of the Selectize-styles to SCSS",
+  "keywords": [
+    "SCSS",
+    "selectize",
+    "CSS"
+  ],
+  "author": "Emanuel Kluge <mail@emanuel-kluge.de>",
+  "license": "Apache License, Version 2.0",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-sass": "~0.7.3"
+  }
+}
