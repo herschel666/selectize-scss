@@ -1,6 +1,6 @@
 {
   "name": "selectize-scss",
-  "version": "0.8.5rc1",
+  "version": "0.8.5rc3",
   "description": "A port of the Selectize-styles to SCSS",
   "keywords": [
     "SCSS",
