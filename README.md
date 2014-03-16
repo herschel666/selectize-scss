@@ -3,15 +3,19 @@ Selectize-SCSS
 
 [Selectize.js](https://github.com/brianreavis/selectize.js) is a great jQuery-plugin for displaying custom `<select>`-elements. Unfortunately it relies on LESS as a CSS-precompiler.
 
-As I personally rely on SCSS and I also want to be able to configure the design of Selectize.js by using variables, I made a port to SCSS. But beware: at the moment there's only the Default-theme available!
+As I personally rely on SCSS and I also want to be able to configure the design of Selectize.js by using variables, I made a port to SCSS.
 
-If you need the Bootstrap-2/3-theme ported to SCSS, maybe you'd like to contribute and make a pull-request.
+## Installation
 
-1. Just fork this repository
-2. Checkout a new branch
-3. Write the Bootstrap-2/3-styles and make the pull-request.
+You can either down the [ZIP-archive](https://github.com/herschel666/selectize-scss/archive/v0.8.5rc2.zip) or fetch it from the bower-registry:
 
-Thank you!
+	bower install selectize-scss --save
+
+Thereby you'll get the whole package as **Selectize.js** is set as a dependency.
+
+## Bootstrap 2
+
+At the moment there's only the Default- and the Bootstrap3-theme, as there's no official SASS-port of Bootstrap2. If you're in urgent need for the Bootstrap2-theme, maybe you want to contribute?!
 
 ----------
 
