@@ -1,6 +1,6 @@
 {
   "name": "selectize-scss",
-  "version": "0.8.5rc3",
+  "version": "0.8.6",
   "authors": [
     "Emanuel Kluge <mail@emanuel-kluge.de>"
   ],
@@ -18,11 +18,9 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "bower_components"
   ],
   "dependencies": {
-    "selectize": "~0.8.5"
+    "selectize": "~0.9.1"
   }
 }
