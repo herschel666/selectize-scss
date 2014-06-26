@@ -1,5 +1,3 @@
-@import 'selectize';
-
 $selectize-font-family: $font-family-base;
 $selectize-font-size: $font-size-base;
 $selectize-line-height: $line-height-computed;
@@ -42,6 +40,8 @@ $selectize-caret-margin: 0;
 $selectize-arrow-size: 5px;
 $selectize-arrow-color: $selectize-color-text;
 $selectize-arrow-offset: $selectize-padding-x + 5px;
+
+@import 'selectize';
 
 .selectize-dropdown,
 .selectize-dropdown.form-control {
