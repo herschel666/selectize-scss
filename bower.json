@@ -21,6 +21,6 @@
     "bower_components"
   ],
   "dependencies": {
-    "selectize": "~0.11.0"
+    "selectize": "~0.11.2"
   }
 }
