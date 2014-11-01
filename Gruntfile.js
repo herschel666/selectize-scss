@@ -5,7 +5,8 @@ module.exports = function (grunt) {
         sass: {
             dist: {
                 options: {
-                    precision: 6
+                    precision: 6,
+                    sourcemap: 'none'
                 },
                 files: {
                     'dist/selectize.css': ['src/selectize.scss'],
