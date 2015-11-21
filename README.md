@@ -7,7 +7,7 @@ As I personally rely on SCSS and I also want to be able to configure the design 
 
 ## Installation
 
-You can either down the [ZIP-archive](https://github.com/herschel666/selectize-scss/archive/v0.8.7.zip) or fetch it from the bower-registry:
+You can either down the [ZIP-archive](https://github.com/herschel666/selectize-scss/archive/v0.9.0.zip) or fetch it from the bower-registry:
 
 	bower install selectize-scss --save
 
@@ -19,7 +19,7 @@ At the moment there's only the Default- and the Bootstrap3-theme, as there's no 
 
 ----------
 
-Copyright (c) 2014 Emanuel Kluge
+Copyright (c) 2015 Emanuel Kluge
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
 file except in compliance with the License. You may obtain a copy of the License at:
