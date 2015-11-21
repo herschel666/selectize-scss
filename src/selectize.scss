@@ -1,18 +1,5 @@
-/**
- * selectize.scss (v0.8.7)
- * Copyright (c) 2014 Emanuel Kluge
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
- * file except in compliance with the License. You may obtain a copy of the License at:
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
- * ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- *
- * @author Emanuel Kluge <mail@emanuel-kluge.de>
- */
+
+// base styles
 
 $selectize-font-family: inherit !default;
 $selectize-font-smoothing: inherit !default;
@@ -21,8 +8,8 @@ $selectize-line-height: 18px !default;
 
 $selectize-color-text: #303030 !default;
 $selectize-color-border: #d0d0d0 !default;
-$selectize-color-highlight: rgba(125, 168, 208, .2) !default;
-$selectize-color-input: #fff !default;
+$selectize-color-highlight: rgba(125,168,208,0.2) !default;
+$selectize-color-input: white !default;
 $selectize-color-input-full: $selectize-color-input !default;
 $selectize-color-disabled: #fafafa !default;
 $selectize-color-item: #f2f2f2 !default;
@@ -31,12 +18,12 @@ $selectize-color-item-border: #d0d0d0 !default;
 $selectize-color-item-active: #e8e8e8 !default;
 $selectize-color-item-active-text: $selectize-color-text !default;
 $selectize-color-item-active-border: #cacaca !default;
-$selectize-color-dropdown: #fff !default;
+$selectize-color-dropdown: white !default;
 $selectize-color-dropdown-border: $selectize-color-border !default;
 $selectize-color-dropdown-border-top: #f0f0f0 !default;
 $selectize-color-dropdown-item-active: #f5fafd !default;
 $selectize-color-dropdown-item-active-text: #495c68 !default;
-$selectize-color-dropdown-item-create-text: rgba(red($selectize-color-text), green($selectize-color-text), blue($selectize-color-text), .5) !default;
+$selectize-color-dropdown-item-create-text: rgba(red($selectize-color-text), green($selectize-color-text), blue($selectize-color-text), 0.5) !default;
 $selectize-color-dropdown-item-create-active-text: $selectize-color-dropdown-item-active-text !default;
 $selectize-color-optgroup: $selectize-color-dropdown !default;
 $selectize-color-optgroup-text: $selectize-color-text !default;
@@ -45,9 +32,10 @@ $selectize-lighten-disabled-item-text: 30% !default;
 $selectize-lighten-disabled-item-border: 30% !default;
 $selectize-opacity-disabled: 0.5 !default;
 
-$selectize-shadow-input: inset 0 1px 1px rgba(0, 0, 0, .1) !default;
-$selectize-shadow-input-focus: inset 0 1px 2px rgba(0, 0, 0, .15) !default;
+$selectize-shadow-input: inset 0 1px 1px rgba(black, 0.1) !default;
+$selectize-shadow-input-focus: inset 0 1px 2px rgba(black, 0.15) !default;
 $selectize-border: 1px solid $selectize-color-border !default;
+$selectize-dropdown-border: 1px solid $selectize-color-dropdown-border !default;
 $selectize-border-radius: 3px !default;
 
 $selectize-width-item-border: 0 !default;
@@ -69,30 +57,28 @@ $selectize-arrow-offset: 15px !default;
 $selectize-caret-margin: 0 2px 0 0 !default;
 $selectize-caret-margin-rtl: 0 4px 0 -2px !default;
 
+// mixins
+
 @mixin selectize-border-radius ($radii) {
     -webkit-border-radius: $radii;
     -moz-border-radius: $radii;
     border-radius: $radii;
 }
-
-@mixin selectize-select ($type: none) {
-    -webkit-user-select: $type;
-    -moz-user-select: $type;
-    -ms-user-select: $type;
-    user-select: $type;
+@mixin selectize-unselectable () {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-
 @mixin selectize-box-shadow ($shadow) {
     -webkit-box-shadow: $shadow;
     box-shadow: $shadow;
 }
-
 @mixin selectize-box-sizing ($type: border-box) {
     -webkit-box-sizing: $type;
     -moz-box-sizing: $type;
     box-sizing: $type;
 }
-
 @mixin selectize-vertical-gradient ($color-top, $color-bottom) {
     background-color: mix($color-top, $color-bottom, 60%);
     background-image: -moz-linear-gradient(top, $color-top, $color-bottom); // FF 3.6+
@@ -101,19 +87,19 @@ $selectize-caret-margin-rtl: 0 4px 0 -2px !default;
     background-image: -o-linear-gradient(top, $color-top, $color-bottom); // Opera 11.10
     background-image: linear-gradient(to bottom, $color-top, $color-bottom); // Standard, IE10
     background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(
-        startColorstr='#{$color-top}',
-        endColorstr='#{$color-bottom}',
-        GradientType=0); // IE9 and down
+    filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{argb($color-top)}', endColorstr='#{argb($color-bottom)}', GradientType=0)"; // IE9 and down
 }
+
+@import "plugins/drag_drop";
+@import "plugins/dropdown_header";
+@import "plugins/optgroup_columns";
+@import "plugins/remove_button";
 
 .selectize-control {
     position: relative;
 }
 
-.selectize-dropdown,
-.selectize-input,
-.selectize-input input {
+.selectize-dropdown, .selectize-input, .selectize-input input {
     color: $selectize-color-text;
     font-family: $selectize-font-family;
     font-size: $selectize-font-size;
@@ -121,8 +107,7 @@ $selectize-caret-margin-rtl: 0 4px 0 -2px !default;
     -webkit-font-smoothing: $selectize-font-smoothing;
 }
 
-.selectize-input,
-.selectize-control.single .selectize-input.input-active {
+.selectize-input, .selectize-control.single .selectize-input.input-active {
     background: $selectize-color-input;
     cursor: text;
     display: inline-block;
@@ -136,9 +121,9 @@ $selectize-caret-margin-rtl: 0 4px 0 -2px !default;
     overflow: hidden;
     position: relative;
     z-index: 1;
-    @include selectize-box-sizing(border-box);
-    @include selectize-box-shadow($selectize-shadow-input);
-    @include selectize-border-radius($selectize-border-radius);
+    @include selectize-box-sizing (border-box);
+    @include selectize-box-shadow ($selectize-shadow-input);
+    @include selectize-border-radius ($selectize-border-radius);
 
     .selectize-control.multi &.has-items {
         $padding-x: $selectize-padding-x;
@@ -154,10 +139,10 @@ $selectize-caret-margin-rtl: 0 4px 0 -2px !default;
         cursor: default !important;
     }
     &.focus {
-        @include selectize-box-shadow($selectize-shadow-input-focus);
+        @include selectize-box-shadow ($selectize-shadow-input-focus);
     }
     &.dropdown-active {
-        @include selectize-border-radius($selectize-border-radius $selectize-border-radius 0 0);
+        @include selectize-border-radius ($selectize-border-radius $selectize-border-radius 0 0);
     }
 
     > * {
@@ -202,22 +187,19 @@ $selectize-caret-margin-rtl: 0 4px 0 -2px !default;
         border: 0 none !important;
         background: none !important;
         line-height: inherit !important;
-        @include selectize-select(auto !important);
-        @include selectize-box-shadow(none !important);
-
-        &:focus {
-            outline: none !important;
-        }
+        -webkit-user-select: auto !important;
+        @include selectize-box-shadow (none !important);
+        &:focus { outline: none !important; }
     }
 }
 
-.selectize-input:after {
+.selectize-input::after {
     content: ' ';
     display: block;
     clear: left;
 }
 
-.selectize-input.dropdown-active:before {
+.selectize-input.dropdown-active::before {
     content: ' ';
     display: block;
     position: absolute;
@@ -231,20 +213,20 @@ $selectize-caret-margin-rtl: 0 4px 0 -2px !default;
 .selectize-dropdown {
     position: absolute;
     z-index: 10;
-    border: $selectize-border;
+    border: $selectize-dropdown-border;
     background: $selectize-color-dropdown;
     margin: -1px 0 0 0;
     border-top: 0 none;
-    @include selectize-box-sizing(border-box);
-    @include selectize-box-shadow(0 1px 3px rgba(0, 0, 0, .1));
-    @include selectize-border-radius(0 0 $selectize-border-radius $selectize-border-radius);
+    @include selectize-box-sizing (border-box);
+    @include selectize-box-shadow (0 1px 3px rgba(black, 0.1));
+    @include selectize-border-radius (0 0 $selectize-border-radius $selectize-border-radius);
 
     [data-selectable] {
         cursor: pointer;
         overflow: hidden;
         .highlight {
             background: $selectize-color-highlight;
-            @include selectize-border-radius(1px);
+            @include selectize-border-radius (1px);
         }
     }
     [data-selectable], .optgroup-header {
@@ -286,7 +268,7 @@ $selectize-caret-margin-rtl: 0 4px 0 -2px !default;
         position: absolute;
         top: 50%;
         right: $selectize-arrow-offset;
-        margin-top: round(-$selectize-arrow-size / 2);
+        margin-top: round((-1 * $selectize-arrow-size / 2));
         width: 0;
         height: 0;
         border-style: solid;
@@ -294,7 +276,7 @@ $selectize-caret-margin-rtl: 0 4px 0 -2px !default;
         border-color: $selectize-arrow-color transparent transparent transparent;
     }
     &.dropdown-active:after {
-        margin-top: $selectize-arrow-size * -.8;
+        margin-top: $selectize-arrow-size * -0.8;
         border-width: 0 $selectize-arrow-size $selectize-arrow-size $selectize-arrow-size;
         border-color: transparent transparent $selectize-arrow-color transparent;
     }

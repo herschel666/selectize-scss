@@ -1,54 +1,69 @@
-$selectize-font-family: $font-family-base;
-$selectize-font-size: $font-size-base;
-$selectize-line-height: $line-height-computed;
+/**
+ * selectize.bootstrap3.css (v0.12.1) - Bootstrap 3 Theme
+ * Copyright (c) 2013–2015 Brian Reavis & contributors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+ * file except in compliance with the License. You may obtain a copy of the License at:
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+ * ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ *
+ * @author Brian Reavis <brian@thirdroute.com>
+ */
 
-$selectize-color-text: $text-color;
-$selectize-color-highlight: rgba(255, 237, 40, .4);
-$selectize-color-input: $input-bg;
-$selectize-color-input-full: $input-bg;
-$selectize-color-input-error: $state-danger-text;
-$selectize-color-input-error-focus: darken($selectize-color-input-error, 10%);
-$selectize-color-disabled: $input-bg;
-$selectize-color-item: #efefef;
-$selectize-color-item-border: rgba(0, 0, 0, 0);
-$selectize-color-item-active: $component-active-bg;
-$selectize-color-item-active-text: #fff;
-$selectize-color-item-active-border: rgba(0, 0, 0, 0);
-$selectize-color-optgroup: $dropdown-bg;
-$selectize-color-optgroup-text: $dropdown-header-color;
-$selectize-color-optgroup-border: $dropdown-divider-bg;
-$selectize-color-dropdown: $dropdown-bg;
-$selectize-color-dropdown-border-top: mix($input-border, $input-bg, .8);
-$selectize-color-dropdown-item-active: $dropdown-link-hover-bg;
-$selectize-color-dropdown-item-active-text: $dropdown-link-hover-color;
-$selectize-color-dropdown-item-create-active-text: $dropdown-link-hover-color;
-$selectize-opacity-disabled: .5;
-$selectize-shadow-input: none;
-$selectize-shadow-input-focus: inset 0 1px 2px rgba(0, 0, 0, .15);
-$selectize-shadow-input-error: inset 0 1px 1px rgba(0, 0, 0, .075);
-$selectize-shadow-input-error-focus: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
-$selectize-border: 1px solid $input-border;
-$selectize-border-radius: $input-border-radius;
+$selectize-fonts-family: inherit !default;
+$selectize-font-size: inherit !default;
+$selectize-line-height: $line-height-computed !default;
 
-$selectize-width-item-border: 0;
-$selectize-padding-x: $padding-base-horizontal;
-$selectize-padding-y: $padding-base-vertical;
-$selectize-padding-dropdown-item-x: $padding-base-horizontal;
-$selectize-padding-dropdown-item-y: 3px;
-$selectize-padding-item-x: 3px;
-$selectize-padding-item-y: 1px;
-$selectize-margin-item-x: 3px;
-$selectize-margin-item-y: 3px;
-$selectize-caret-margin: 0;
+$selectize-color-text: $text-color !default;
+$selectize-color-highlight: rgba(255,237,40,0.4) !default;
+$selectize-color-input: $input-bg !default;
+$selectize-color-input-full: $input-bg !default;
+$selectize-color-input-error: $state-danger-text !default;
+$selectize-color-input-error-focus: darken($selectize-color-input-error, 10%) !default;
+$selectize-color-disabled: $input-bg !default;
+$selectize-color-item: #efefef !default;
+$selectize-color-item-border: rgba(black, 0) !default;
+$selectize-color-item-active: $component-active-bg !default;
+$selectize-color-item-active-text: #fff !default;
+$selectize-color-item-active-border: rgba(black, 0) !default;
+$selectize-color-optgroup: $dropdown-bg !default;
+$selectize-color-optgroup-text: $dropdown-header-color !default;
+$selectize-color-optgroup-border: $dropdown-divider-bg !default;
+$selectize-color-dropdown: $dropdown-bg !default;
+$selectize-color-dropdown-border-top: mix($input-border, $input-bg, 0.8) !default;
+$selectize-color-dropdown-item-active: $dropdown-link-hover-bg !default;
+$selectize-color-dropdown-item-active-text: $dropdown-link-hover-color !default;
+$selectize-color-dropdown-item-create-active-text: $dropdown-link-hover-color !default;
+$selectize-opacity-disabled: 0.5 !default;
+$selectize-shadow-input: none !default;
+$selectize-shadow-input-focus: inset 0 1px 2px rgba(black, 0.15) !default;
+$selectize-shadow-input-error: inset 0 1px 1px rgba(black, .075) !default;
+$selectize-shadow-input-error-focus: inset 0 1px 1px rgba(black, .075), 0 0 6px lighten($selectize-color-input-error, 20%) !default;
+$selectize-border: 1px solid $input-border !default;
+$selectize-border-radius: $input-border-radius !default;
 
-$selectize-arrow-size: 5px;
-$selectize-arrow-color: $selectize-color-text;
-$selectize-arrow-offset: $selectize-padding-x + 5px;
+$selectize-width-item-border: 0 !default;
+$selectize-padding-x: $padding-base-horizontal !default;
+$selectize-padding-y: $padding-base-vertical !default;
+$selectize-padding-dropdown-item-x: $padding-base-horizontal !default;
+$selectize-padding-dropdown-item-y: 3px !default;
+$selectize-padding-item-x: 3px !default;
+$selectize-padding-item-y: 1px !default;
+$selectize-margin-item-x: 3px !default;
+$selectize-margin-item-y: 3px !default;
+$selectize-caret-margin: 0 !default;
 
-@import 'selectize';
+$selectize-arrow-size: 5px !default;
+$selectize-arrow-color: $selectize-color-text !default;
+$selectize-arrow-offset: $selectize-padding-x + 5px !default;
 
-.selectize-dropdown,
-.selectize-dropdown.form-control {
+@import "selectize";
+
+.selectize-dropdown, .selectize-dropdown.form-control {
     height: auto;
     padding: 0;
     margin: 2px 0 0 0;
@@ -56,29 +71,25 @@ $selectize-arrow-offset: $selectize-padding-x + 5px;
     background: $selectize-color-dropdown;
     border: 1px solid $dropdown-fallback-border;
     border: 1px solid $dropdown-border;
-    @include selectize-border-radius($border-radius-base);
-    @include selectize-box-shadow(0 6px 12px rgba(0, 0, 0, .175));
+    @include selectize-border-radius ($border-radius-base);
+    @include selectize-box-shadow (0 6px 12px rgba(black, .175));
 }
 
 .selectize-dropdown {
-
     .optgroup-header {
         font-size: $font-size-small;
         line-height: $line-height-base;
     }
-
     .optgroup:first-child:before {
         display: none;
     }
-
     .optgroup:before {
         content: ' ';
         display: block;
+        @include nav-divider;
         margin-left: $selectize-padding-dropdown-item-x * -1;
         margin-right: $selectize-padding-dropdown-item-x * -1;
-        @include nav-divider;
     }
-
 }
 
 .selectize-dropdown-content {
@@ -93,48 +104,40 @@ $selectize-arrow-offset: $selectize-padding-x + 5px;
     min-height: $input-height-base;
 
     &.dropdown-active {
-        @include selectize-border-radius($selectize-border-radius);
+        @include selectize-border-radius ($selectize-border-radius);
     }
-
-    &.dropdown-active:before {
+    &.dropdown-active::before {
         display: none;
     }
-
     &.focus {
         $color: $input-border-focus;
         $color-rgba: rgba(red($color), green($color), blue($color), .6);
         border-color: $color;
         outline: 0;
-        @include selectize-box-shadow(#{inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $color-rgba});
+        @include selectize-box-shadow ("inset 0 1px 1px rgba(black, .075), 0 0 8px #{$color-rgba}");
     }
-
 }
 
 .has-error .selectize-input {
     border-color: $selectize-color-input-error;
-    @include selectize-box-shadow($selectize-shadow-input-error);
+    @include selectize-box-shadow ($selectize-shadow-input-error);
 
     &:focus {
         border-color: $selectize-color-input-error-focus;
-        @include selectize-box-shadow($selectize-shadow-input-error-focus);
+        @include selectize-box-shadow ($selectize-shadow-input-error-focus);
     }
 }
 
 .selectize-control {
-
     &.multi {
-
         .selectize-input.has-items {
             padding-left: $selectize-padding-x - $selectize-padding-item-x;
             padding-right: $selectize-padding-x - $selectize-padding-item-x;
         }
-
         .selectize-input > div {
-            @include selectize-border-radius($selectize-border-radius - 1px);
+            @include selectize-border-radius ($selectize-border-radius - 1px);
         }
-
     }
-
 }
 
 .form-control.selectize-control {
@@ -142,6 +145,6 @@ $selectize-arrow-offset: $selectize-padding-x + 5px;
     height: auto;
     border: none;
     background: none;
-    @include selectize-box-shadow(none);
-    @include selectize-border-radius(0);
+    @include selectize-box-shadow (none);
+    @include selectize-border-radius (0);
 }

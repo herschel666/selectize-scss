@@ -1,6 +1,6 @@
 {
   "name": "selectize-scss",
-  "version": "0.8.7",
+  "version": "0.9.0",
   "authors": [
     "Emanuel Kluge <mail@emanuel-kluge.de>"
   ],
@@ -21,6 +21,6 @@
     "bower_components"
   ],
   "dependencies": {
-    "selectize": "~0.11.2"
+    "selectize": "0.12.1"
   }
 }
