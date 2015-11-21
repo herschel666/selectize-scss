@@ -1,5 +1,3 @@
-@import 'selectize';
-
 $selectize-color-item: #1da7ee;
 $selectize-color-item-text: #fff;
 $selectize-color-item-active-text: #fff;
@@ -8,6 +6,8 @@ $selectize-color-item-active: #92c836;
 $selectize-color-item-active-border: #00578d;
 $selectize-width-item-border: 1px;
 $selectize-caret-margin: 0 1px;
+
+@import 'selectize';
 
 .selectize-control {
 
