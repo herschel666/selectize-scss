@@ -20,6 +20,6 @@
     "bower_components"
   ],
   "dependencies": {
-    "selectize": "0.12.2"
+    "selectize": "selectize/selectize.js#0.12.2"
   }
 }
