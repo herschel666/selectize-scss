@@ -1,6 +1,6 @@
 {
   "name": "selectize-scss",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "A port of the Selectize-styles to SCSS",
   "keywords": [
     "SCSS",
