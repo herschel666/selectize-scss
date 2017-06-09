@@ -7,7 +7,7 @@ As I personally rely on SCSS and I also want to be able to configure the design 
 
 ## Installation
 
-You can either down the [ZIP-archive](https://github.com/herschel666/selectize-scss/archive/v0.9.2.zip) or fetch it from the bower-registry:
+You can either down the [ZIP-archive](https://github.com/herschel666/selectize-scss/archive/v0.10.1.zip) or fetch it from the bower-registry:
 
 	bower install selectize-scss --save
 
